@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<h1>Hello World!</h1>
+<a th:href="@{/cars}">CARS</a><br>
+<a href="">USERS</a>
+<br><br>
+<a th:href="@{/admin}">ADMIN PORTAL</a>
+<br><br>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout">
+</form>
+</body>
+</html>

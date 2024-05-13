@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" />
+</head>
+<body>
+<div>
+    <h1>Admin Area</h1>
+    <p>This content is visible only to admins.</p>
+    <a th:href="@{/}">Back to Home</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${edit ? 'Edit Car' : 'New Car'}"></title>
+</head>
+<body>
+<h1 th:text="${edit ? 'Edit Car' : 'New Car'}"></h1>
+<form method="post" th:action="@{${edit ? '/cars/edit' : '/cars/create'}}" th:object="${car}">
+    <input type="hidden" th:field="*{id}">
+    <b>Licence Plate:</b>
+    <input type="text" th:field="*{licencePlate}">
+    <span th:if="${#fields.hasErrors('licencePlate')}" th:errors="*{licencePlate}"></span>
+    <br>
+    <b>Color:</b>
+    <input type="text" th:field="*{color}">
+    <span th:if="${#fields.hasErrors('color')}" th:errors="*{color}"></span>
+    <br>
+    <b>Engine Volume:</b> <input type="text" th:field="*{engineVolume}">
+    <span th:if="${#fields.hasErrors('engineVolume')}" th:errors="*{engineVolume}"></span>
+    <br>
+    <b>Owner:</b>
+    <select th:field="*{user}">
+        <option th:each="user: ${users}" th:value="${user.id}" th:text="${user.username}"></option>
+    </select>
+    <br>
+<input type="submit" value="Save">
+</form>
+
+</body>
+</html>

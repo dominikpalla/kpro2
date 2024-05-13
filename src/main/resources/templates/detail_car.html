@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Detail</title>
+</head>
+<body>
+<h1>Car Detail:</h1>
+<b>Licence Plate:</b> <span th:text="${car.licencePlate}"></span><br>
+<b>Color:</b> <span th:text="${car.color}"></span><br>
+<b>Engine Volume:</b> <span th:text="${car.engineVolume}"></span><br>
+<b>Owner:</b> <span th:text="${car.user.username}"></span><br>
+<a th:href="@{${'/cars/edit/' + car.id}}">Edit Car</a>
+<br>
+<a th:href="@{${'/cars/delete/' + car.id}}">Delete Car</a>
+</body>
+</html>
